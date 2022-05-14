@@ -8,7 +8,7 @@
 
 - [git](git)
 - [zsh](zsh)
-- [bashhub](bashhub)
+- [bashhub](bashhub) - See <https://bashhub.com/jimbrig2011>
 - [bash](bash)
 - [profile](profile)
 
