@@ -1,0 +1,8 @@
+*.pyc
+!/.gitignore
+!/bin
+!/README.md
+!/CHANGELOG.md
+!/.ignored_files
+!/.dotignore
+

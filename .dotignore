@@ -1,0 +1,12 @@
+# List of files to be ignored, not copied
+# these are case insensitive
+readme.*
+news
+licence
+license
+changelog.*
+.gitignore
+tags
+.gitmodules
+.*\.sw.
+.gitattributes
