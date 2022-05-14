@@ -9,3 +9,7 @@
 - [git](git)
 - [zsh](zsh)
 - [bashhub](bashhub)
+- [bash](bash)
+- [profile](profile)
+
+plus, some [custom setup scripts](bin/setup).
