@@ -1,0 +1,40 @@
+#!/usr/bin/env python3
+
+import sys
+import os
+
+DEFAULT_BASE_DIR = os.path.dirname(os.path.dirname(
+    os.path.realpath(sys.argv[0])))
+sys.path.insert(0, os.path.join(DEFAULT_BASE_DIR, 'bin', 'lib'))
+DEFAULT_HOME_DIR = os.environ['HOME']
+
+__doc__ = """Dotfiles manager
+Usage:
+  dot update [--dry] [--verbose] [--base-dir=<base-dir>] [--home-dir=<home-dir>] [--skip-pull]
+  dot status [--base-dir=<base-dir>]
+  dot add [--base-dir=<base-dir>] [--verbose] <url>...
+  dot (-h | --help)
+  dot --version
+Options:
+  -h --help                Show this screen.
+  --version                Show version.
+  -v --verbose             More verbose output.
+  --dry                    Don't make real modification, just print what will be done.
+  --base-dir=<base-dir>    Directory to search environments [default: {DEFAULT_BASE_DIR}].
+  --home-dir=<home-dir>    Directory, where files should be linked to [default: {DEFAULT_HOME_DIR}].
+""".format(**locals())
+
+from docopt import docopt
+from dot import COMMANDS
+from dot.logging import init_logging
+
+
+if __name__ == '__main__':
+    arguments = docopt(__doc__, version='dot 0.5.0')
+    init_logging(verbose=arguments.get('--verbose', False))
+
+    for name, func in COMMANDS.items():
+        if arguments[name]:
+            func(arguments['--base-dir'],
+                 arguments['--home-dir'],
+                 arguments)
