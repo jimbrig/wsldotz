@@ -2,7 +2,7 @@
 
 > Windows Sub-System for Linux `~/.dotfiles`
 
-*Created using my custom python library [dot](./bin/dot)*
+*Created using my custom python library [dot](./bin/dot). View the [created symlinks](.created-links) for details.*
 
 ## Contents
 
